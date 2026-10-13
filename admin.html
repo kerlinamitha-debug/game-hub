@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#090b14">
+  <title>Admin Game Hub</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="admin.css">
+</head>
+<body class="admin-page">
+  <div class="ambient ambient-one"></div><div class="ambient ambient-two"></div>
+  <header class="topbar">
+    <a class="brand" href="index.html"><span class="brand-mark">G<span>H</span></span><span>GAME<span class="brand-accent">HUB</span></span></a>
+    <a class="header-button" href="index.html">← Lihat website</a>
+  </header>
+  <main class="admin-wrap">
+    <section class="admin-heading">
+      <div class="eyebrow"><span class="live-dot"></span> PRIVATE CONTROL CENTER</div>
+      <h1>ADMIN <span>PANEL.</span></h1>
+      <p>Kelola katalog Game Hub kamu dari satu tempat.</p>
+    </section>
+
+    <section class="admin-panel" id="loginPanel">
+      <h2>Masuk Admin</h2>
+      <p class="admin-muted">Masuk menggunakan akun admin yang sudah dibuat di Supabase.</p>
+      <form id="loginForm" class="admin-form">
+        <label>Email admin<input id="loginEmail" type="email" autocomplete="username" required placeholder="email admin kamu"></label>
+        <label>Password<input id="loginPassword" type="password" autocomplete="current-password" required placeholder="Password Supabase"></label>
+        <button class="admin-primary" type="submit">Masuk ke dashboard ↗</button>
+      </form>
+      <p id="loginMessage" class="admin-message" role="status"></p>
+      <div class="admin-notice">Panel ini memerlukan konfigurasi Supabase terlebih dahulu. Jangan masukkan password GitHub di halaman ini.</div>
+    </section>
+
+    <section class="admin-panel" id="dashboardPanel" hidden>
+      <div class="dashboard-top">
+        <div><div class="eyebrow">GAME LIBRARY</div><h2>Kelola Game</h2><p class="admin-muted" id="signedInAs"></p></div>
+        <button class="admin-secondary" id="logoutButton" type="button">Keluar</button>
+      </div>
+      <form id="gameForm" class="admin-form game-form">
+        <input id="gameId" type="hidden">
+        <div class="form-grid">
+          <label>Nama game *<input id="gameName" required maxlength="100" placeholder="Nama game"></label>
+          <label>Platform *
+            <select id="gamePlatform" required><option value="pc">Windows / PC</option><option value="android">Android</option></select>
+          </label>
+          <label>Genre<input id="gameGenre" maxlength="60" placeholder="Racing, Action, RPG..."></label>
+          <label>Simbol cover<input id="gameSymbol" maxlength="4" placeholder="GH"></label>
+          <label class="wide">Deskripsi<textarea id="gameDescription" rows="3" maxlength="500" placeholder="Ceritakan tentang game ini"></textarea></label>
+          <label class="wide">Link unduhan<input id="gameDownload" type="url" placeholder="https://... (.exe / .apk atau halaman unduhan)"></label>
+          <label class="wide">URL gambar cover (opsional)<input id="gameImage" type="url" placeholder="https://..."></label>
+        </div>
+        <label class="publish-check"><input id="gamePublished" type="checkbox" checked> Tampilkan game di website publik</label>
+        <div class="form-actions"><button class="admin-primary" type="submit" id="saveGameButton">Simpan game</button><button class="admin-secondary" type="button" id="cancelEditButton">Bersihkan formulir</button></div>
+        <p id="gameMessage" class="admin-message" role="status"></p>
+      </form>
+      <div class="admin-list-heading"><h3>Game tersimpan</h3><button class="admin-secondary" id="refreshButton" type="button">Muat ulang</button></div>
+      <div id="adminGameList" class="admin-game-list"></div>
+    </section>
+    <p class="admin-footer">Game Hub · Admin khusus pemilik · <a href="index.html">Kembali ke website</a></p>
+  </main>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="admin.js"></script>
+</body>
+</html>
