@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#090b14">
+  <meta name="description" content="Game Hub — tempat kumpulan game PC dan Android favoritmu.">
+  <title>Game Hub — Your Next Adventure</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="ambient ambient-one"></div>
+  <div class="ambient ambient-two"></div>
+  <header class="topbar">
+    <a class="brand" href="#" aria-label="Game Hub home">
+      <span class="brand-mark">G<span>H</span></span>
+      <span>GAME<span class="brand-accent">HUB</span></span>
+    </a>
+    <nav class="nav-links" aria-label="Navigasi utama">
+      <a href="#home" class="nav-link active">Beranda</a>
+      <a href="#library" class="nav-link">Koleksi Game</a>
+      <a href="#about" class="nav-link">Tentang</a>
+    </nav>
+    <a class="header-button" href="#library">Jelajahi Game <span>↗</span></a>
+    <button class="menu-toggle" id="menuToggle" aria-label="Buka menu" aria-expanded="false">☰</button>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="hero-copy">
+        <div class="eyebrow"><span class="live-dot"></span> YOUR PERSONAL GAME UNIVERSE</div>
+        <h1>LEVEL UP<br>YOUR <span>PLAY.</span></h1>
+        <p class="hero-description">Satu tempat untuk menemukan game PC dan Android pilihanmu. Pilih petualangan berikutnya dan bersiap untuk bermain.</p>
+        <div class="hero-actions">
+          <a class="primary-button" href="#library">Jelajahi Koleksi <span>→</span></a>
+          <a class="text-button" href="#about"><span class="play-icon">▶</span> Kenali Game Hub</a>
+        </div>
+        <div class="hero-stats">
+          <div><strong>PC <span>+</span></strong><small>WINDOWS GAMES</small></div>
+          <div class="stat-divider"></div>
+          <div><strong>ANDROID</strong><small>MOBILE GAMES</small></div>
+          <div class="stat-divider"></div>
+          <div><strong>100<span>%</span></strong><small>GAMING VIBES</small></div>
+        </div>
+      </div>
+      <div class="hero-art" aria-label="Ilustrasi gaming futuristik">
+        <div class="orbit orbit-one"></div><div class="orbit orbit-two"></div>
+        <div class="hero-core">
+          <div class="core-top">GAMING<br>UNIVERSE</div>
+          <div class="core-symbol">GH</div>
+          <div class="core-bottom">READY PLAYER ONE</div>
+        </div>
+        <div class="float-card card-top"><span class="mini-icon">⌘</span><div><b>PC GAMING</b><small>ENTER THE GAME</small></div></div>
+        <div class="float-card card-bottom"><span class="mini-icon purple">✦</span><div><b>MOBILE PLAY</b><small>PLAY ANYWHERE</small></div></div>
+        <div class="spark spark-one">✦</div><div class="spark spark-two">+</div><div class="spark spark-three">✧</div>
+      </div>
+      <div class="hero-grid"></div>
+    </section>
+
+    <section class="library-section section-wrap" id="library">
+      <div class="section-heading">
+        <div><div class="eyebrow"><span class="heading-line"></span> THE GAME VAULT</div><h2>KOLEKSI <span>GAME</span></h2><p>Temukan game yang cocok dengan gaya bermainmu.</p></div>
+        <div class="library-count"><span class="count-dot"></span><span id="gameCount">0</span> GAME TERDAFTAR</div>
+      </div>
+      <div class="library-tools">
+        <div class="filter-tabs" role="group" aria-label="Filter platform">
+          <button class="filter-tab selected" data-filter="all">Semua Game</button>
+          <button class="filter-tab" data-filter="pc">Windows / PC</button>
+          <button class="filter-tab" data-filter="android">Android</button>
+        </div>
+        <label class="search-box"><span>⌕</span><input id="gameSearch" type="search" placeholder="Cari game..." aria-label="Cari game"></label>
+      </div>
+      <div class="game-grid" id="gameGrid"></div>
+      <div class="empty-state" id="emptyState" hidden><div class="empty-icon">⌕</div><h3>Belum ada game di sini</h3><p>Coba kata pencarian atau filter yang lain.</p></div>
+      <div class="library-note"><span>ⓘ</span> Game yang tampil di sini adalah contoh tampilan. Link unduhan akan tersedia setelah game kamu ditambahkan.</div>
+    </section>
+
+    <section class="about-section section-wrap" id="about">
+      <div class="about-panel">
+        <div class="about-symbol">GH<span>_</span></div>
+        <div class="about-copy"><div class="eyebrow">BUILT FOR PLAYERS</div><h2>GAME KAMU.<br><span>ATURAN KAMU.</span></h2><p>Game Hub adalah rumah untuk koleksi game pilihanmu. Kami sedang menyiapkan katalog yang bisa diperbarui dengan informasi game, platform, gambar, dan tautan unduhan.</p></div>
+        <a href="#library" class="about-link">Lihat koleksi <span>↗</span></a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer"><a class="brand footer-brand" href="#"><span class="brand-mark">G<span>H</span></span><span>GAME<span class="brand-accent">HUB</span></span></a><span>MADE FOR THE LOVE OF GAMES</span><span>© <span id="year"></span> GAME HUB</span></footer>
+  <script src="script.js"></script>
+</body>
+</html>
